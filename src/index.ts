@@ -5,12 +5,8 @@ import { AddUser } from "./discord/addUserList";
 import { SendGoodVibe } from "./discord/sendMessage";
 const app = express();
 
-let url: string = dotenv.parsed.JUBILANT_URL
-  ? dotenv.parsed?.JUBILANT_URL
-  : process.env.JUBILANT_URL;
-let token: string = dotenv.parsed.TOKEN
-  ? dotenv.parsed.TOKEN
-  : process.env.JUBILANT_URL;
+let url: string = process.env.JUBILANT_URL;
+let token: string = process.env.JUBILANT_URL;
 
 if (!url && !token) {
   throw new Error("Brooky");
