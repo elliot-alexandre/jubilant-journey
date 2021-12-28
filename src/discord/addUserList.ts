@@ -4,7 +4,7 @@ const fs = require("fs");
 import path from "path";
 
 export const AddUser = (idServer: string, username: string, token: string) => {
-  const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+  const client = new Discord.Client({ intents: ["GUILDS"] });
 
   client.on("ready", async () => {
     let guildMaster = await client.guilds.fetch(idServer);

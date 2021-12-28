@@ -1,3 +1,4 @@
+import Discord from "discord.js";
 import express from "express";
 import { dotenv } from "../config";
 import { AddUser } from "./discord/addUserList";
@@ -11,6 +12,35 @@ const token = dotenv.parsed.TOKEN;
 if (!port && !url && !token) {
   throw new Error("Brooky");
 }
+
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+
+const prefix = "!";
+const comm = "addUser";
+
+client.on("messageCreate", function (message: any) {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  const commandBody = message.content.slice(prefix.length);
+  const command = commandBody.find("addUser");
+  const arg = commandBody.slice(comm.length).split(" ");
+
+  if (command === true) {
+    try {
+      AddUser("925203323261419520", arg, token);
+      SendGoodVibe(token, "Hey OwO ! How was your day ? UwU");
+      message.reply(`GG WP loser!`);
+    } catch (error) {
+      console.log(error);
+      message.reply(`Something wrong!`);
+    }
+  } else {
+    message.reply(`Something wrong!`);
+  }
+});
+
+client.login(token);
 
 try {
   app.get("/", (req, res) => {
