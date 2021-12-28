@@ -13,6 +13,7 @@
     "typescript": "^4.5.4"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@babel/core": "^7.12.13",
     "@babel/node": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
@@ -24,8 +25,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.6.3",
-    "prettier": "^2.2.1",
-    "vercel": "^21.3.3"
+    "prettier": "^2.2.1"
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --passWithNoTests --testTimeout=5000 --detectOpenHandles",

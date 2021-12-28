@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "lib",
@@ -22,7 +21,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
   },
-  "include": ["api", "types"],
+  "include": ["server.ts"],
   "ts-node": {
     "transpileOnly": true
   }
