@@ -1,7 +1,7 @@
 {
   "name": "jubilant-journey",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "repository": "git@github.com:elliot-alexandre/jubilant-journey.git",
   "author": "elliot",
   "license": "MIT",
