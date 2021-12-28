@@ -5,6 +5,9 @@
   "repository": "git@github.com:elliot-alexandre/jubilant-journey.git",
   "author": "elliot",
   "license": "MIT",
+  "engines": {
+    "npm": "16.13.1"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "discord.js": "^13.4.0",
