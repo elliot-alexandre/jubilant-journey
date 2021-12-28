@@ -49,10 +49,10 @@ try {
     res.send("Hello World!");
   });
 
-  app.post("/new-user", (req, res) => {
-    AddUser("925203323261419520", req.body.username, token);
-    res.send("Hello World!");
-  });
+  // app.post("/new-user", (req, res) => {
+  //   AddUser("925203323261419520", req.body.username, token);
+  //   res.send("Hello World!");
+  // });
 
   app.post("/send", (req, res) => {
     SendGoodVibe(token, "Hey OwO ! How was your day ? UwU");
@@ -64,7 +64,7 @@ try {
   });
 
   app.listen(port, () => {
-    return console.log(`Express is listening at ${url}${port}`);
+    return console.log(`Express is listening at ${url}`);
   });
 } catch (error) {
   console.error(error);
