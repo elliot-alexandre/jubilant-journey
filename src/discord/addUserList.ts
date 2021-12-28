@@ -4,23 +4,26 @@ const fs = require("fs");
 import path from "path";
 
 export const AddUser = (idServer: string, username: string, token: string) => {
-  const client = new Discord.Client({ intents: ["GUILDS"] });
+  try {
+    const client = new Discord.Client({ intents: ["GUILDS"] });
 
-  client.on("ready", async () => {
-    let guildMaster = await client.guilds.fetch(idServer);
+    client.on("ready", async () => {
+      let guildMaster = await client.guilds.fetch(idServer);
 
-    let coolKid = await guildMaster.members.search({ query: username });
+      let coolKid = await guildMaster.members.search({ query: username });
 
-    fs.writeFile(
-      path.join("dist/src/discord", "list-user.json"),
-      JSON.stringify(coolKid, null, 2),
-      (err: Error) => {
-        if (err) throw err;
-        console.log("Data written to file");
-      }
-    );
-  });
+      fs.writeFile(
+        path.join("dist/src/discord", "list-user.json"),
+        JSON.stringify(coolKid, null, 2),
+        (err: Error) => {
+          if (err) throw err;
+          console.log("Data written to file");
+        }
+      );
+    });
 
-  client.login(token);
+    client.login(token);
+  } catch (e) {
+    console.log("lmao");
+  }
 };
-//925203323261419520

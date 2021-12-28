@@ -1,11 +1,12 @@
+import { dotenv } from "../config";
 import Discord from "discord.js";
 import express from "express";
 import { AddUser } from "./discord/addUserList";
 import { SendGoodVibe } from "./discord/sendMessage";
 const app = express();
 
-const url: string = process.env.JUBILANT_URL as string;
-const token: string = process.env.TOKEN as string;
+const url: string = dotenv.parsed.JUBILANT_URL as string;
+const token: string = dotenv.parsed.TOKEN as string;
 
 if (!url && !token) {
   throw new Error("Brooky");
@@ -28,6 +29,8 @@ client.on("messageCreate", function (message: any) {
   console.log(command);
   if (command >= 0) {
     try {
+      let test = arg.slice(" ");
+      console.log(test);
       AddUser("925203323261419520", arg, token);
       SendGoodVibe(token, "Hey OwO ! How was your day ? UwU");
       message.reply(`GG WP loser!`);
