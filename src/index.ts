@@ -63,7 +63,7 @@ try {
     res.send("Hello World!");
   });
 
-  app.listen(port, () => {
+  app.listen(process.env.PORT || 3000, () => {
     return console.log(`Express is listening at ${url}`);
   });
 } catch (error) {
