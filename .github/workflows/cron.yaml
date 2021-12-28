@@ -1,0 +1,26 @@
+name: once-a-day-cron
+on:
+  schedule:
+    - cron: "0 0 19 * * *"
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call our API route
+        run: |
+          curl --request POST \
+          --url '${{ secrets.API_SECRET_URL_MESSAGE }}' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+name: once-a-day-reply-cron
+on:
+  schedule:
+    - cron: "0 0 20 * * *"
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call our API route
+        run: |
+          curl --request POST \
+          --url '${{ secrets.API_SECRET_URL_REPLY }}' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
