@@ -31,5 +31,8 @@
     "test": "cross-env NODE_ENV=test jest --passWithNoTests --testTimeout=5000 --detectOpenHandles",
     "dev": "cross-env NODE_ENV=dev nodemon --exec babel-node src/index.js",
     "start": "cross-env NODE_ENV=production babel-node src/index.js"
+  },
+  "engines": {
+    "node": "~16.13.1"
   }
 }
