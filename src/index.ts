@@ -6,7 +6,7 @@ import { SendGoodVibe } from "./discord/sendMessage";
 const app = express();
 
 let url: string = process.env.JUBILANT_URL as string;
-let token: string = process.env.JUBILANT_URL as string;
+let token: string = process.env.TOKEN as string;
 
 if (!url && !token) {
   throw new Error("Brooky");
