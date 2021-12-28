@@ -1,0 +1,29 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "lib",
+    "noEmit": true,
+    "declaration": true,
+    "allowJs": true,
+    "jsx": "preserve",
+    "incremental": false,
+    "lib": ["es6", "dom", "es2017", "ESNext"],
+    "types": ["node"],
+    "target": "es5",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+  },
+  "include": ["api", "types"],
+  "ts-node": {
+    "transpileOnly": true
+  }
+}
