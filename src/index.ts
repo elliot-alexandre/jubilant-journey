@@ -15,16 +15,16 @@ if (!port && !url && !token) {
 
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 
-const prefix = "!";
-const comm = "addUser";
+const prefix: any = "!";
+const comm: any = "addUser";
 
 client.on("messageCreate", function (message: any) {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
-  const commandBody = message.content.slice(prefix.length);
-  const command = commandBody.search("addUser");
-  const arg = commandBody.slice(comm.length).split(" ");
+  const commandBody: any = message.content.slice(prefix.length);
+  const command: any = commandBody.search("addUser");
+  const arg: any = commandBody.slice(comm.length).split(" ");
 
   console.log(commandBody);
   console.log(command);
@@ -45,7 +45,7 @@ client.on("messageCreate", function (message: any) {
 client.login(token);
 
 try {
-  app.get("/", (req, res) => {
+  app.get("/", (req: any, res: any) => {
     res.send("Hello World!");
   });
 
@@ -54,18 +54,18 @@ try {
   //   res.send("Hello World!");
   // });
 
-  app.post("/send", (req, res) => {
+  app.post("/send", (req: any, res: any) => {
     SendGoodVibe(token, "Hey OwO ! How was your day ? UwU");
     res.send("Hello World!");
   });
 
-  app.post("/reply", (req, res) => {
+  app.post("/reply", (req: any, res: any) => {
     res.send("Hello World!");
   });
 
   app.listen(process.env.PORT || 3000, () => {
     return console.log(`Express is listening at ${url}`);
   });
-} catch (error) {
+} catch (error: any) {
   console.error(error);
 }
