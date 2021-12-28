@@ -1,15 +1,13 @@
 import Discord from "discord.js";
 import express from "express";
-import { dotenv } from "../config";
 import { AddUser } from "./discord/addUserList";
 import { SendGoodVibe } from "./discord/sendMessage";
 const app = express();
 
-const port = dotenv.parsed.JUBILANT_PORT;
-const url = dotenv.parsed.JUBILANT_URL;
-const token = dotenv.parsed.TOKEN;
+const url: string = process.env.JUBILANT_URL as string;
+const token: string = process.env.TOKEN as string;
 
-if (!port && !url && !token) {
+if (!url && !token) {
   throw new Error("Brooky");
 }
 
