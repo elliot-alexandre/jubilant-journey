@@ -23,10 +23,12 @@ client.on("messageCreate", function (message: any) {
   if (!message.content.startsWith(prefix)) return;
 
   const commandBody = message.content.slice(prefix.length);
-  const command = commandBody.find("addUser");
+  const command = commandBody.search("addUser");
   const arg = commandBody.slice(comm.length).split(" ");
 
-  if (command === true) {
+  console.log(commandBody);
+  console.log(command);
+  if (command >= 0) {
     try {
       AddUser("925203323261419520", arg, token);
       SendGoodVibe(token, "Hey OwO ! How was your day ? UwU");
